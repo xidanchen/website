@@ -1,4 +1,9 @@
-baseURL = "http://example.org/"
+baseURL = "https://www.quantifyhappiness.com/"
 languageCode = "en-us"
 title = "My New Hugo Site"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+[social]
+    github  = "https://github.com/xidanchen"
+
+enableEmoji = true
