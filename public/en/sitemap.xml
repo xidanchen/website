@@ -8,11 +8,6 @@
   </url>
   
   <url>
-    <loc>/contact/contact/</loc>
-    <lastmod>2018-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/projects/packages/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
   </url>
@@ -34,12 +29,6 @@
                 hreflang="en"
                 href="/categories/"
                 />
-  </url>
-  
-  <url>
-    <loc>/contact/</loc>
-    <lastmod>2018-11-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -83,6 +72,10 @@
                 hreflang="en"
                 href="/"
                 />
+  </url>
+  
+  <url>
+    <loc>/contact/</loc>
   </url>
   
 </urlset>
