@@ -1,36 +1,142 @@
 baseurl = "https://www.quantifyhappiness.com/"
-title = "Mainroad"
-languageCode = "en-us"
-paginate = "10" # Number of posts per page
-theme = "Mainroad"
-disqusShortname = "" # Enable comments by entering your Disqus shortname
-googleAnalytics = "" # Enable Google Analytics by entering your tracking id
+title = "xidan chen"
 
-[Author]
-  name = "Xidan Chen"
-  bio = "Xidan Chen's true identity is unknown. Maybe he is a successful blogger or writer. Nobody knows it."
-  avatar = "img/avatar.png"
+theme = "hugo-coder"
 
-[Params]
-  subtitle = "Just another site" # Subtitle of your site
-  description = "Xidan Chen's Personal blog about everything" # Description of your site
-  opengraph = true
-  twitter_cards = false
-  readmore = false # Show "Read more" button in list if true
-  authorbox = true
-  post_navigation = true
-  postSections = ["post"]
+languagecode = "en"
 
-[Params.sidebar]
-  home = "right"   # Configure layout for home page
-  list = "right"   # Configure layout for list pages
-  single = "right" # Configure layout for single pages
-  # Enable widgets in given order
-  widgets = ["search", "recent", "categories", "taglist"]
+paginate = 20
+canonifyurls = true
 
-[Params.widgets]
-  recent_num = 5 # Set the number of articles in the "Recent articles" widget
-  tags_counter = false # Enable counter for each tag in "Tags" widget (disabled by default)
-  
-  
+pygmentsstyle = "b2"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+disqusShortname = "yourdiscussshortname"
+
+[params]
+    author = "Xidan Chen"
+    description = "Xidan Chen's personal website"
+    keywords = "blog, data science, happiness, personal"
+    info = "Data Lover and Hobby Scientist"
+    avatarurl = "images/me.jpg"
+   # footercontent = "Enter a text here."
+    #fixedbarContent = "Do you want to know me more private?→" # Add fixedbar content
+    #fixedbarContentAfter = "Thank You! Please share it if you like it→" # Add fixedbar content after click
+  #  dateformat = "January 2, 2006"
+
+    hideCredits = false
+    hideCopyright = false
+
+    # Git Commit in Footer, uncomment the line below to enable it.
+    commit = "https://github.com/luizdepra/hugo-coder/tree/"
+
+    rtl = false
+
+    # Custom CSS
+    custom_css = []
+
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github"
+    weight = 1
+    url = "https://github.com/xidanchen/"
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter"
+    weight = 3
+    url = "https://twitter.com/XidanChen/"
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin"
+    weight = 4
+    url = "https://www.linkedin.com/in/xidan-amber-chen-9a538b20/"
+
+
+[[menu.main]]
+    name = "Blog"
+    weight = 1
+    url  = "/post/"
+[[menu.main]]
+    name = "About"
+    weight = 2
+    url = "/about/"
+[[menu.main]]
+    name = "Projects"
+    weight = 3
+    url = "/projects/"
+[[menu.main]]
+    name = "Contact me"
+    weight = 5
+    url = "/contact/"
+
+[languages]
+    [languages.en]
+        languagename = "English" # The language name to be displayed in the selector.
+        title = "Xidan Chen"
+
+        # You can configure the theme parameter for each language.
+        [languages.en.params]
+        author = "Xidan Chen"
+        info = "Data Lover and Hobby Scientist"
+        description = "Xidan Chen's personal website"
+        keywords = "blog, data science, happiness, personal"
+
+        [languages.en.menu] # It is possible to change the menu too.
+
+        [[languages.en.menu.main]]
+        name = "About"
+        weight = 1.0
+        url = "/about/"
+
+        [[languages.en.menu.main]]
+        name = "Blog"
+        weight = 2.0
+        url = "/post/"
+
+        [[languages.en.menu.main]]
+        name = "Projects"
+        weight = 3
+        url = "/projects/"
+        [[languages.en.menu.main]]
+        name = "Contact me"
+        weight = 5
+        url = "/contact/"
+
+
+    [languages.ch]
+        languagename = "中文"
+        title = "Xidan Chen"
+
+        [languages.ch.params]
+            author = "Xidan Chen"
+            description = "xidan chen 的个人网站"
+            keywords = "博客, 数据科学, 幸福, 个人"
+            info = "统计，数据科学"
+
+        [languages.ch.menu]
+
+            [[languages.ch.menu.main]]
+            name = "关于"
+            weight = 1.0
+            url = "/ch/about/"
+
+            [[languages.ch.menu.main]]
+            name = "博客"
+            weight = 2.0
+            url = "/ch/post/"
+
+            [[languages.ch.menu.main]]
+            name = "项目"
+            weight = 3
+            url = "/projects/"
+            [[languages.ch.menu.main]]
+            name = "联系我"
+            weight = 5
+            url = "/contact/"
+
+
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+
+
