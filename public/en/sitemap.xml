@@ -8,7 +8,8 @@
   </url>
   
   <url>
-    <loc>/post/google6f149b5219603acc/</loc>
+    <loc>/projects/packages/</loc>
+    <lastmod>2018-11-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -32,6 +33,12 @@
   
   <url>
     <loc>/post/</loc>
+    <lastmod>2018-11-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/projects/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

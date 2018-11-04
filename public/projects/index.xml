@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Xidan Chen</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on Xidan Chen</description>
+    <title>Projects on Xidan Chen</title>
+    <link>/projects/</link>
+    <description>Recent content in Projects on Xidan Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>cognitive impairment</title>
-      <link>/post/cognitive-impairment/</link>
+      <title>packages</title>
+      <link>/projects/packages/</link>
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/cognitive-impairment/</guid>
+      <guid>/projects/packages/</guid>
       <description></description>
     </item>
     
