@@ -1,0 +1,44 @@
+---
+title: a quick step-by-step guide to buide your own website using Blogdown, Github, Netlify
+author: Xidan Chen
+date: '2018-11-05'
+slug: tutorial
+categories:
+  - R tutorial
+tags: []
+---
+If you are interested in creating your own website through RStudio, but don't want to spend time reading the book *blogdown: Creating Websites with R Markdown*, have no idea about version control, data managment, etc. Here is the step-by-step guide for you:
+
+#STEP1:
+First, log into your github account, creat a new repository. If you don't have github account, create one.
+* click the '+' sign at the upper-right corner of the panel
+* select 'new repository'
+   + give your new repository a name (e.g. Repository name: myrepo)
+   + leave it to Public
+   + Check **Initialize this repository with a README**
+* click the green “Create repository” button
+* click the green "clone or download" button, click 'Use HTTPS', copy the URL to your clipboard
+
+#STEP2:
+In RStudio, create a new project:
+* File > New Project > Version Control > Git.
+   + in the 'repository URL', paste the URL of your github repository (e.g. https://github.com/xidanchen/myrepo.git)
+   + 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -11,6 +11,9 @@ canonifyurls = true
 pygmentsstyle = "b2"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
+enableRobotsTXT = true
+canonifyURLs = true
+
 
 disqusShortname = "yourdiscussshortname"
 

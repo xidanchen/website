@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Xidan Chen</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on Xidan Chen</description>
+    <title>Tutorial on Xidan Chen</title>
+    <link>/categories/tutorial/</link>
+    <description>Recent content in Tutorial on Xidan Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 05 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/tutorial/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,15 +20,6 @@
       <description>If you are interested in creating your own website through RStudio, but don’t want to spend time reading the book blogdown: Creating Websites with R Markdown, have no idea about version control, data managment, etc. Here is the step-by-step guide for you:
 STEP1:First, log into your github account, creat a new repository. If you don’t have github account, create one.
 click the + sign at the upper-right corner of the panel</description>
-    </item>
-    
-    <item>
-      <title>cognitive impairment</title>
-      <link>/post/cognitive-impairment/</link>
-      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/cognitive-impairment/</guid>
-      <description></description>
     </item>
     
   </channel>
