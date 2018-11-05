@@ -2,7 +2,7 @@ baseurl = "https://www.quantifyhappiness.com/"
 title = "xidan chen"
 
 theme = "hugo-coder"
-
+googleAnalytics = "UA-128690538-1"
 languagecode = "en"
 
 paginate = 20
