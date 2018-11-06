@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/</loc>
+    <loc>/post/2018-11-05-a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/</loc>
     <lastmod>2018-11-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -83,10 +83,6 @@
                 hreflang="en"
                 href="/"
                 />
-  </url>
-  
-  <url>
-    <loc>/contact/</loc>
   </url>
   
 </urlset>

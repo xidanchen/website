@@ -23,7 +23,7 @@ disqusShortname = "yourdiscussshortname"
     keywords = "blog, data science, happiness, personal"
     info = "Data Lover and Hobby Scientist"
     avatarurl = "images/me.jpg"
-   # footercontent = "Enter a text here."
+    footercontent = "Interested in working together? Contact me!"
     #fixedbarContent = "Do you want to know me more private?→" # Add fixedbar content
     #fixedbarContentAfter = "Thank You! Please share it if you like it→" # Add fixedbar content after click
   #  dateformat = "January 2, 2006"
@@ -69,9 +69,9 @@ disqusShortname = "yourdiscussshortname"
     weight = 3
     url = "/projects/"
 [[menu.main]]
-    name = "Contact me"
+    name = "Travel"
     weight = 5
-    url = "/contact/"
+    url = "/travel/"
 
 [languages]
     [languages.en]
@@ -102,9 +102,9 @@ disqusShortname = "yourdiscussshortname"
         weight = 3
         url = "/projects/"
         [[languages.en.menu.main]]
-        name = "Contact me"
+        name = "Travel"
         weight = 5
-        url = "/contact/"
+        url = "/travel/"
 
 
     [languages.ch]
@@ -132,11 +132,11 @@ disqusShortname = "yourdiscussshortname"
             [[languages.ch.menu.main]]
             name = "项目"
             weight = 3
-            url = "/projects/"
+            url = "/ch/projects/"
             [[languages.ch.menu.main]]
-            name = "联系我"
+            name = "旅行"
             weight = 5
-            url = "/contact/"
+            url = "/ch/travel/"
 
 
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]

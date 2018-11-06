@@ -1,0 +1,105 @@
+---
+title: A quick step-by-step guide to buide your own website using Blogdown, Github,
+  Netlify
+author: Xidan Chen
+date: '2018-11-05'
+slug: a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify
+categories:
+  - tutorial
+tags: []
+---
+
+If you are interested in creating your own website through RStudio, but don't want to spend time reading the book *blogdown: Creating Websites with R Markdown*, and have no idea about version control, data managment, etc. Here is the step-by-step guide for you:  
+
+# STEP1:  
+First, log into your github account, creat a new repository. If you don't have github account, create one.  
+ 
+ * click the **+** sign at the upper-right corner of the panel  
+ * select **new repository**  
+     + give your new repository a name (e.g. Repository name: myrepo)  
+     + leave it to Public  
+     + Check **Initialize this repository with a README**  
+ * click the green **Create repository** button  
+ * click the green **clone or download** button, click **Use HTTPS**, copy the URL to your clipboard  
+
+# STEP2:  
+In RStudio, create a new project:  
+ 
+ * File > New Project > Version Control > Git.  
+     + in the **Repository URL**, paste the URL of your github repository (e.g. https://github.com/xidanchen/myrepo.git)  
+     + give your project a name(e.g. Project directory name: myweb)  
+     + Browse the directory you would like to put your project  
+     + click the **Create Project** button  
+     
+Doing so, you now linked your github repository(myrepo) to your RStudio project(myweb).  
+
+
+# STEP3:  
+This step is adopted from section 1.7 of xie yihui's blogdown book.  
+
+ * pick a hugo theme at https://themes.gohugo.io/. I am going to pick the theme *Coder*.  
+ * click on Homepage to find the link to this repository(https://github.com/luizdepra/hugo-coder/)    
+ * in r studio, type the code blogdown::new_site(theme = 'luizdepra/hugo-coder') in the Console  
+ * customize the new site, we will come back to this later   
+     + edit the options in **config.toml**. If you do not have a domain, set "baseurl" to "/". Change the "title" to your own name.  
+        - About how to change the options, consult the documention of the theme you selected. It's often at the github repository of the selected theme or at the demo part of your selected theme at https://themes.gohugo.io/  
+     + click the **Addins** botton on the RStudio toolbar, select **New Post** to create a new post or page   
+     + click the **Addins** botton, select **Serve Site** to preview the site in RStudio Viewer. note do not click the *knit* button.  
+ 
+ 
+ 
+# STEP4:   
+Commit and push the changes to github  
+
+ * In RStudio, you will have a screen like this
+ ![netlifyCreateAnewSite](/post/2018-11-05-a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/RStudio.png)
+
+ * at the upper-right corner, click on **Git**  
+ * tick the Staged box  
+ * click **Commit**, a new window will open  
+ ![netlifyCreateAnewSite](/post/2018-11-05-a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/commit.png)
+
+ * type something in *Commit message*, that's often the changes you made and would like to record(e.g. add theme)  
+ * click the **commit** button  
+ * click the green **Push** arrow, changes you've made will then be pushed to github  
+ * if you've made lots of changes to the theme, instead of ticking the boxes of Staged, click *Tools > Shell*, type **git add . **  This will select all the changes you would like to add. Then commit and push. 
+
+
+# STEP5:  
+Next is to publish your site with Netlify.   
+
+ * log into https://www.netlify.com with your github account  
+ * click the green button **New site from Git**
+ ![netlifyCreateAnewSite](/post/2018-11-05-a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/netlify_createAnewSite.png)
+ 
+ * Follow the step-by-step guide by Netlify, connect netlify to your github repository
+ * One problem with Netfly deployment is the default hugo version is too old, you would need to specify a hugo version greater than 0.20.   
+ * type **HUGO_VERSION** for the key, **0.50** for the Value    
+  ![deploy](/post/2018-11-05-a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/deploy.png)
+   
+ * click the **Deploy site**, now your site is live. 
+ ![deploy](/post/2018-11-05-a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/siteLive.png)
+ 
+ * sometimes although following the same procedure, netlify won't deploy your website, Click on **Deploys**, **Trigger deploy** manually, try it several times. Check the **Deploy settings**, make sure **Build command** is set to **hugo**, **Publish directory** is set to **public**.   
+  ![deploy](/post/2018-11-05-a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/deployFail.png)
+  
+  * netlify will assign a random Site name to you, go to **Settings**, change **Site name**, if you would like to have a unique domain name, check out **Domain management**. You can purchase one on netlify or get one somewhere else for free. Use your search engine. 
+  
+  
+# STEP6:  
+Now you have your won website! go back to RStudio, make changes to your website. commit and push the changes to your github account. netlify will automatically publish your new site.   
+
+Don't know how to modify the theme? search xie yihui's book *blogdown: Creating Websites with R Markdown*, documentation of your selected theme, online tutorials, etc. 
+
+# USEFUL LINKS   
+I will keep updating this
+---
+
+add google analytics to your site: http://cloudywithachanceofdevops.com/posts/2018/05/17/setting-up-google-analytics-on-hugo/#step-1-adding-your-site-to-google-analytics   
+
+add a contact form on your website: https://medium.com/@flobin/how-to-set-up-a-contact-form-on-a-static-website-62c2267bacfb   
+  
+
+   
+   
+   

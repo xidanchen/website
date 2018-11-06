@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>a quick step-by-step guide to buide your own website using Blogdown, Github, Netlify</title>
-      <link>/post/a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/</link>
+      <title>A quick step-by-step guide to buide your own website using Blogdown, Github, Netlify</title>
+      <link>/post/2018-11-05-a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/</link>
       <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/</guid>
-      <description>If you are interested in creating your own website through RStudio, but don’t want to spend time reading the book blogdown: Creating Websites with R Markdown, have no idea about version control, data managment, etc. Here is the step-by-step guide for you:
+      <guid>/post/2018-11-05-a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/</guid>
+      <description>If you are interested in creating your own website through RStudio, but don’t want to spend time reading the book blogdown: Creating Websites with R Markdown, and have no idea about version control, data managment, etc. Here is the step-by-step guide for you:
 STEP1:First, log into your github account, creat a new repository. If you don’t have github account, create one.
 click the + sign at the upper-right corner of the panel</description>
     </item>
@@ -47,15 +47,6 @@ STEP1:First, log into your github account, creat a new repository. If you don�
       
       <guid>/about/</guid>
       <description>I am a scientist&amp;hellip;.</description>
-    </item>
-    
-    <item>
-      <title>contact me</title>
-      <link>/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/contact/</guid>
-      <description>Interested in working together? Email me and I&amp;rsquo;ll get back to you as soon as possible.</description>
     </item>
     
   </channel>

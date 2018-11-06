@@ -9,7 +9,7 @@ categories:
 tags: []
 ---
 
-If you are interested in creating your own website through RStudio, but don't want to spend time reading the book *blogdown: Creating Websites with R Markdown*, have no idea about version control, data managment, etc. Here is the step-by-step guide for you:  
+If you are interested in creating your own website through RStudio, but don't want to spend time reading the book *blogdown: Creating Websites with R Markdown*, and have no idea about version control, data managment, etc. Here is the step-by-step guide for you:  
 
 # STEP1:  
 First, log into your github account, creat a new repository. If you don't have github account, create one.  
@@ -34,8 +34,25 @@ In RStudio, create a new project:
 Doing so, you now linked your github repository(myrepo) to your RStudio project(myweb).  
 
 
-# STEP3:
+# STEP3:  
+This step is adopted from section 1.7 of xie yihui's blogdown book.  
 
+ * pick a hugo theme at https://themes.gohugo.io/. I am going to pick the theme *Coder*.  
+ * click on Homepage to find the link to this repository(https://github.com/luizdepra/hugo-coder/)    
+ * in r studio, type the code blogdown::new_site(theme = 'luizdepra/hugo-coder') in the Console  
+ * customize the new site, we will come back to this later   
+     + edit the options in **config.toml**. About how to change the options, consult the documention of the theme you selected. It's often at the github repository of the selected theme or at the demo part of your selected theme at https://themes.gohugo.io/  
+     + click the **Addins** botton on the RStudio toolbar, select **New Post** to create a new post or page   
+     + click the **Addins** botton, select **Serve Site** to preview the site in RStudio Viewer. note do not click the *knit* button.  
+ 
+# STEP4:  
+Next is to publish your site with Netlify.   
+
+ * log into https://www.netlify.com with your github account  
+ * click the green button **New site from Git**
+ ![netlifyCreateAnewSite](/images/netlify_createAnewSite.png)
+ 
+ 
    
    
    
