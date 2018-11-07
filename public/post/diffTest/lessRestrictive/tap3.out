@@ -1,0 +1,302 @@
+Mplus VERSION 8
+MUTHEN & MUTHEN
+10/14/2018   3:39 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE: LGCA
+  DATA: FILE = "C:/Users/xidan/Dropbox/delirium/cogMeasuresMplusG/tap3.dat";
+
+
+  VARIABLE:
+  NAMES = gruppe tap3T1 tap3T2 tap3T3 tap3T4;
+  MISSING=.;
+  USEVARIABLES = gruppe tap3T1 tap3T2 tap3T3;
+  grouping = gruppe(1=intervention 2=no)
+
+
+  ANALYSIS:
+  ESTIMATOR=MLR;
+
+  MODEL:
+  i s | tap3T1@0 tap3T2@1 tap3T3@2;
+  s@0;
+
+
+
+
+
+*** WARNING in MODEL command
+  All continuous latent variable covariances involving S have been fixed to 0
+  because the variance of S is fixed at 0.
+*** WARNING
+  Data set contains unknown or missing values for GROUPING,
+  PATTERN, COHORT, CLUSTER and/or STRATIFICATION variables.
+  Number of cases with unknown or missing values:  776
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  16
+   3 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+LGCA
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 2
+Number of observations
+   Group INTERVENTION                                          220
+   Group NO                                                    209
+   Total sample size                                           429
+
+Number of dependent variables                                    3
+Number of independent variables                                  0
+Number of continuous latent variables                            2
+
+Observed dependent variables
+
+  Continuous
+   TAP3T1      TAP3T2      TAP3T3
+
+Continuous latent variables
+   I           S
+
+Variables with special functions
+
+  Grouping variable     GRUPPE
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+
+Input data file(s)
+  C:/Users/xidan/Dropbox/delirium/cogMeasuresMplusG/tap3.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+   Group INTERVENTION
+     Number of missing data patterns             4
+
+   Group NO
+     Number of missing data patterns             6
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT FOR INTERVENTION
+
+
+           Covariance Coverage
+              TAP3T1        TAP3T2        TAP3T3
+              ________      ________      ________
+ TAP3T1         1.000
+ TAP3T2         0.714         0.714
+ TAP3T3         0.350         0.345         0.350
+
+
+     PROPORTION OF DATA PRESENT FOR NO
+
+
+           Covariance Coverage
+              TAP3T1        TAP3T2        TAP3T3
+              ________      ________      ________
+ TAP3T1         0.990
+ TAP3T2         0.703         0.713
+ TAP3T3         0.392         0.392         0.397
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS FOR INTERVENTION
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     TAP3T1               -0.007       0.174      -2.394    0.45%      -0.796     -0.330     -0.027
+             220.000       0.882       0.004       2.434    0.45%       0.218      0.731
+     TAP3T2                0.091       0.036      -2.665    0.64%      -0.809     -0.183      0.065
+             157.000       0.976      -0.224       3.020    0.64%       0.278      1.058
+     TAP3T3                0.047       2.613      -1.625    1.30%      -0.721     -0.331     -0.130
+              77.000       0.989      12.319       5.783    1.30%       0.026      0.740
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS FOR NO
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     TAP3T1               -0.022       0.531      -2.476    0.48%      -0.855     -0.307     -0.038
+             207.000       1.115       2.112       4.988    0.48%       0.242      0.766
+     TAP3T2               -0.094       0.828      -1.980    0.67%      -0.975     -0.455     -0.254
+             149.000       1.013       1.106       3.942    0.67%       0.006      0.751
+     TAP3T3               -0.043       0.340      -3.544    1.20%      -0.710     -0.442     -0.174
+              83.000       0.994       3.185       3.931    1.20%       0.004      0.651
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       12
+
+Loglikelihood
+
+          H0 Value                       -1161.815
+          H0 Scaling Correction Factor      2.1308
+            for MLR
+          H1 Value                       -1159.537
+          H1 Scaling Correction Factor      1.7967
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                    2347.630
+          Bayesian (BIC)                  2396.367
+          Sample-Size Adjusted BIC        2358.286
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              4.037*
+          Degrees of Freedom                     6
+          P-Value                           0.6717
+          Scaling Correction Factor         1.1284
+            for MLR
+
+Chi-Square Contribution From Each Group
+
+          INTERVENTION                       0.668
+          NO                                 3.369
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.070
+          Probability RMSEA <= .05           0.870
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.019
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            112.006
+          Degrees of Freedom                     6
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.036
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Group INTERVENTION
+
+ I        |
+    TAP3T1             1.000      0.000    999.000    999.000
+    TAP3T2             1.000      0.000    999.000    999.000
+    TAP3T3             1.000      0.000    999.000    999.000
+
+ S        |
+    TAP3T1             0.000      0.000    999.000    999.000
+    TAP3T2             1.000      0.000    999.000    999.000
+    TAP3T3             2.000      0.000    999.000    999.000
+
+ Means
+    I                  0.001      0.063      0.020      0.984
+    S                  0.041      0.050      0.824      0.410
+
+ Intercepts
+    TAP3T1             0.000      0.000    999.000    999.000
+    TAP3T2             0.000      0.000    999.000    999.000
+    TAP3T3             0.000      0.000    999.000    999.000
+
+ Variances
+    I                  0.558      0.081      6.897      0.000
+    S                  0.000      0.000    999.000    999.000
+
+ Residual Variances
+    TAP3T1             0.321      0.082      3.900      0.000
+    TAP3T2             0.457      0.088      5.207      0.000
+    TAP3T3             0.511      0.300      1.702      0.089
+
+Group NO
+
+ I        |
+    TAP3T1             1.000      0.000    999.000    999.000
+    TAP3T2             1.000      0.000    999.000    999.000
+    TAP3T3             1.000      0.000    999.000    999.000
+
+ S        |
+    TAP3T1             0.000      0.000    999.000    999.000
+    TAP3T2             1.000      0.000    999.000    999.000
+    TAP3T3             2.000      0.000    999.000    999.000
+
+ Means
+    I                 -0.042      0.071     -0.596      0.551
+    S                  0.015      0.040      0.368      0.713
+
+ Intercepts
+    TAP3T1             0.000      0.000    999.000    999.000
+    TAP3T2             0.000      0.000    999.000    999.000
+    TAP3T3             0.000      0.000    999.000    999.000
+
+ Variances
+    I                  0.673      0.106      6.365      0.000
+    S                  0.000      0.000    999.000    999.000
+
+ Residual Variances
+    TAP3T1             0.402      0.089      4.509      0.000
+    TAP3T2             0.473      0.121      3.918      0.000
+    TAP3T3             0.369      0.172      2.147      0.032
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.130E+00
+       (ratio of smallest to largest eigenvalue)
+
+
+     Beginning Time:  15:39:36
+        Ending Time:  15:39:36
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2017 Muthen & Muthen

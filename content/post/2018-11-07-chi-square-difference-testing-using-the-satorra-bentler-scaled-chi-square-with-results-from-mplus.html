@@ -1,0 +1,113 @@
+---
+title: Chi-Square Difference Testing Using the Satorra-Bentler Scaled Chi-Square with
+  Results from Mplus
+author: Xidan Chen
+date: '2018-11-07'
+slug: chi-square-difference-testing-using-the-satorra-bentler-scaled-chi-square-with-results-from-mplus
+categories: []
+tags:
+  - Mplus
+  - R
+  - multiple group comparison
+  - SEM
+  - chi-square difference test
+  - nested models
+---
+
+
+
+<p>I was working on a project for which I need to run around 50 sets of comparisons of nested models. For the non-normal continuous data I was working with, I used the MLR as estimation method. Mplus unfortunately won’t compute the chi-square difference test using MLR chi-square. Following their guide here <a href="http://www.statmodel.com/chidiff.shtml" class="uri">http://www.statmodel.com/chidiff.shtml</a>, I therefore wrote these functions to automate my analysis. Although these functions were written for my own analysis using MLR, the same functions could also be used for MLM (Satorra-Bentler) and WLSM chi-square. Below is the guide.</p>
+<p>Required packages are <strong>dplyr, MplusAutomation, plyr</strong>.</p>
+<div id="load-these-functions-into-your-r-outfile-sumchisq-difftestmlr" class="section level2">
+<h2>1. Load these functions into your R: <strong>outFile, SumChiSq, diffTestMLR</strong></h2>
+<pre class="r"><code>outFile &lt;- function(test.dir, models = c(&quot;lessRestrictive&quot;, &quot;restrictive&quot;), list.of.files){
+  dir.create(test.dir)
+  new.folder &lt;- paste0(test.dir, models, collapse=&#39;&#39;)
+  dir.create(new.folder)
+  file.copy(list.of.files, new.folder)
+  
+}
+
+SumChiSq &lt;- function(diff.dir){
+  library(plyr)
+  library(dplyr)
+  library(MplusAutomation)
+  
+  allOutput &lt;- readModels(diff.dir, recursive=TRUE)
+  justSummaries &lt;- do.call(&quot;rbind.fill&quot;,sapply(allOutput,&quot;[&quot;, &quot;summaries&quot;))
+  justSummaries %&gt;%
+         select(Filename, 
+         #Observations, 
+         ChiSqM_Value, 
+         ChiSqM_DF, ChiSqM_ScalingCorrection)
+  
+}
+
+
+diffTestMLR &lt;- function(lessRestrictive.dir, restrictive.dir){
+  
+  lessRestrictive &lt;- SumChiSq(lessRestrictive.dir)
+  restrictive &lt;- SumChiSq(restrictive.dir)
+#Scaled χ2 = (F0c0 - F1c1)(d0 - d1)/(c0d0 - c1d1)
+# F0 = The χ2 value from the constrained model.
+# F1 = The χ2 value from the freely estimated model.
+# c0 = The scaling factor from the constrained model.
+# c1 = The scaling factor from the freely estimated model.
+# d0 = The degrees of freedom from the constrained model.
+# d1 = The degrees of freedom from the freely estimated model.
+
+old_names &lt;- c(&quot;Filename&quot;, &quot;ChiSqM_Value&quot;, &quot;ChiSqM_DF&quot;, &quot;ChiSqM_ScalingCorrection&quot;)
+new_namesf0 &lt;- c(&quot;Filename&quot;, &quot;F0&quot;, &quot;d0&quot;, &quot;c0&quot;)
+new_namesf1 &lt;- c(&quot;Filename&quot;, &quot;F1&quot;, &quot;d1&quot;, &quot;c1&quot;)
+
+restrictive2 &lt;- restrictive %&gt;% 
+  rename_at(vars(old_names), ~ new_namesf0)
+lessRestrictive2 &lt;- lessRestrictive %&gt;% 
+  rename_at(vars(old_names), ~ new_namesf1)
+
+sumChiSq2 &lt;- merge(restrictive2, lessRestrictive2， by=&quot;Filename&quot;)
+
+sumChiSq2 &lt;- sumChiSq2 %&gt;% 
+  mutate(df = d0 - d1) %&gt;%
+  mutate(ScaledChiSq = (F0*c0 - F1*c1)*(d0 - d1)/(c0*d0 - c1*d1)) 
+
+sumChiSq2$p_value &lt;- pchisq(sumChiSq2$ScaledChiSq, sumChiSq2$df, lower.tail=FALSE)
+print(list(&#39;lessRestrictive:&#39; = lessRestrictive, &#39;restrictive:&#39; = restrictive, &#39;diffTestMLR:&#39; = sumChiSq2))
+  
+}</code></pre>
+</div>
+<div id="example" class="section level2">
+<h2>2. Example</h2>
+<p>What you need to do first is specifying a test directory, the list of files for your nested models, and model type (restrictive or less restrictive). <strong>outFile</strong> will create a directory for the difftest, copy the Mplus outputs to the specific model type directories you choose.</p>
+<pre class="r"><code>test.dir &lt;- &#39;./diffTest/&#39;
+list.of.files1 &lt;- c(&quot;./MplusCode/STEP1/tap3/tap3.out&quot;, &quot;./MplusCode/STEP1/vlmta3/vlmta3.out&quot;)
+outFile(test.dir, &quot;lessRestrictive&quot;, list.of.files1)
+
+test.dir &lt;- &#39;./diffTest/&#39;
+list.of.files2 &lt;- c(&quot;./MplusCode/STEP2/tap3/tap3.out&quot;, &quot;./MplusCode/STEP2/vlmta3/vlmta3.out&quot;)
+outFile(test.dir, &quot;restrictive&quot;, list.of.files2)</code></pre>
+<p><strong>SumChiSq will</strong> output the chi-square statistics under the diff test directory</p>
+<p><strong>diffTestMLR</strong> will output the diff test results when restrictive models and less restrictive models are specified. You could skip the <strong>outFile</strong>, use <strong>diffTestMLR</strong> function directly if you don’t have many comparisons.</p>
+<p>For example:</p>
+<pre class="r"><code>lessRestrictive.dir &lt;- &#39;./diffTest/lessRestrictive&#39;
+restrictive.dir &lt;- &#39;./diffTest/Restrictive&#39;
+diffTestMLR(lessRestrictive.dir, restrictive.dir)</code></pre>
+<pre><code>## Reading model:  ./diffTest/lessRestrictive/tap3.out 
+## Reading model:  ./diffTest/lessRestrictive/vlmta3.out 
+## Reading model:  ./diffTest/Restrictive/tap3.out 
+## Reading model:  ./diffTest/Restrictive/vlmta3.out 
+## $`lessRestrictive:`
+##     Filename ChiSqM_Value ChiSqM_DF ChiSqM_ScalingCorrection
+## 1   tap3.out        4.037         6                   1.1284
+## 2 vlmta3.out        3.985         6                   1.2297
+## 
+## $`restrictive:`
+##     Filename ChiSqM_Value ChiSqM_DF ChiSqM_ScalingCorrection
+## 1   tap3.out        4.713         8                   1.0955
+## 2 vlmta3.out        4.237         8                   1.1661
+## 
+## $`diffTestMLR:`
+##     Filename    F0 d0     c0    F1 d1     c1 df ScaledChiSq   p_value
+## 1   tap3.out 4.713  8 1.0955 4.037  6 1.1284  2  0.60969171 0.7372370
+## 2 vlmta3.out 4.237  8 1.1661 3.985  6 1.2297  2  0.04143464 0.9794958</code></pre>
+</div>

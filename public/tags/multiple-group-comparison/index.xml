@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Multiple Group Comparison on Xidan Chen</title>
+    <link>/tags/multiple-group-comparison/</link>
+    <description>Recent content in Multiple Group Comparison on Xidan Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 07 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/multiple-group-comparison/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chi-Square Difference Testing Using the Satorra-Bentler Scaled Chi-Square with Results from Mplus</title>
+      <link>/post/chi-square-difference-testing-using-the-satorra-bentler-scaled-chi-square-with-results-from-mplus/</link>
+      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/chi-square-difference-testing-using-the-satorra-bentler-scaled-chi-square-with-results-from-mplus/</guid>
+      <description>I was working on a project for which I need to run around 50 sets of comparisons of nested models. For the non-normal continuous data I was working with, I used the MLR as estimation method. Mplus unfortunately won’t compute the chi-square difference test using MLR chi-square. Following their guide here http://www.statmodel.com/chidiff.shtml, I therefore wrote these functions to automate my analysis. Although these functions were written for my own analysis using MLR, the same functions could also be used for MLM (Satorra-Bentler) and WLSM chi-square.</description>
+    </item>
+    
+  </channel>
+</rss>

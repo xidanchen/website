@@ -1,0 +1,114 @@
+---
+title: Chi-Square Difference Testing Using the Satorra-Bentler Scaled Chi-Square with
+  Results from Mplus
+author: Xidan Chen
+date: '2018-11-07'
+slug: chi-square-difference-testing-using-the-satorra-bentler-scaled-chi-square-with-results-from-mplus
+categories: []
+tags:
+  - Mplus
+  - R
+  - multiple group comparison
+  - SEM
+  - chi-square difference test
+  - nested models
+---
+I was working on a project for which I need to run around 50 sets of comparisons of nested models. For the non-normal continuous data I was working with, I used the MLR as estimation method. Mplus unfortunately won’t compute the chi-square difference test using MLR chi-square. Following their guide here http://www.statmodel.com/chidiff.shtml, I therefore wrote these functions to automate my analysis. Although these functions were written for my own analysis using MLR, the same functions could also be used for MLM (Satorra-Bentler) and WLSM chi-square. Below is the guide. 
+
+Required packages are **dplyr, MplusAutomation, plyr**. 
+
+1. Load these functions into your R: **outFile, SumChiSq, diffTestMLR**
+--
+```{r}
+
+outFile <- function(test.dir, models = c("lessRestrictive", "restrictive"), list.of.files){
+  dir.create(test.dir)
+  new.folder <- paste0(test.dir, models, collapse='')
+  dir.create(new.folder)
+  file.copy(list.of.files, new.folder)
+  
+}
+
+SumChiSq <- function(diff.dir){
+  library(plyr)
+  library(dplyr)
+  library(MplusAutomation)
+  
+  allOutput <- readModels(diff.dir, recursive=TRUE)
+  justSummaries <- do.call("rbind.fill",sapply(allOutput,"[", "summaries"))
+  justSummaries %>%
+         select(Filename, 
+         #Observations, 
+         ChiSqM_Value, 
+         ChiSqM_DF, ChiSqM_ScalingCorrection)
+  
+}
+
+
+diffTestMLR <- function(lessRestrictive.dir, restrictive.dir){
+  
+  lessRestrictive <- SumChiSq(lessRestrictive.dir)
+  restrictive <- SumChiSq(restrictive.dir)
+#Scaled χ2 = (F0c0 - F1c1)(d0 - d1)/(c0d0 - c1d1)
+# F0 = The χ2 value from the constrained model.
+# F1 = The χ2 value from the freely estimated model.
+# c0 = The scaling factor from the constrained model.
+# c1 = The scaling factor from the freely estimated model.
+# d0 = The degrees of freedom from the constrained model.
+# d1 = The degrees of freedom from the freely estimated model.
+
+old_names <- c("Filename", "ChiSqM_Value", "ChiSqM_DF", "ChiSqM_ScalingCorrection")
+new_namesf0 <- c("Filename", "F0", "d0", "c0")
+new_namesf1 <- c("Filename", "F1", "d1", "c1")
+
+restrictive2 <- restrictive %>% 
+  rename_at(vars(old_names), ~ new_namesf0)
+lessRestrictive2 <- lessRestrictive %>% 
+  rename_at(vars(old_names), ~ new_namesf1)
+
+sumChiSq2 <- merge(restrictive2, lessRestrictive2， by="Filename")
+
+sumChiSq2 <- sumChiSq2 %>% 
+  mutate(df = d0 - d1) %>%
+  mutate(ScaledChiSq = (F0*c0 - F1*c1)*(d0 - d1)/(c0*d0 - c1*d1)) 
+
+sumChiSq2$p_value <- pchisq(sumChiSq2$ScaledChiSq, sumChiSq2$df, lower.tail=FALSE)
+print(list('lessRestrictive:' = lessRestrictive, 'restrictive:' = restrictive, 'diffTestMLR:' = sumChiSq2))
+  
+}
+
+
+```
+
+
+
+2. Example
+--
+What you need to do first is specifying a test directory, the list of files for your nested models, and model type (restrictive or less restrictive). **outFile** will create a directory for the difftest, copy the Mplus outputs to the specific model type directories you choose. 
+```{r, eval=FALSE}
+
+test.dir <- './diffTest/'
+list.of.files1 <- c("./MplusCode/STEP1/tap3/tap3.out", "./MplusCode/STEP1/vlmta3/vlmta3.out")
+outFile(test.dir, "lessRestrictive", list.of.files1)
+
+test.dir <- './diffTest/'
+list.of.files2 <- c("./MplusCode/STEP2/tap3/tap3.out", "./MplusCode/STEP2/vlmta3/vlmta3.out")
+outFile(test.dir, "restrictive", list.of.files2)
+```
+
+**SumChiSq will** output the chi-square statistics under the diff test directory
+
+**diffTestMLR** will output the diff test results when restrictive models and less restrictive models are specified. You could skip the **outFile**, use **diffTestMLR** function directly if you don't have many comparisons.
+
+For example:
+```{r, warning=FALSE, message=FALSE}
+lessRestrictive.dir <- './diffTest/lessRestrictive'
+restrictive.dir <- './diffTest/Restrictive'
+diffTestMLR(lessRestrictive.dir, restrictive.dir)
+```
+
+
+
+
+
+
