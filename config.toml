@@ -39,6 +39,9 @@ disqusShortname = "yourdiscussshortname"
     # Custom CSS
     custom_css = []
 
+    addThis = "ra-5be55ba55820e618"
+
+
 [[params.social]]
     name = "Github"
     icon = "fab fa-github"
