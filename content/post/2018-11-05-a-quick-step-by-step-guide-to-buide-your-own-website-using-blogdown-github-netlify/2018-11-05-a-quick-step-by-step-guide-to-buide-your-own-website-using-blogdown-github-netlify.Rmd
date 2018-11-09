@@ -99,7 +99,7 @@ add google analytics to your site: http://cloudywithachanceofdevops.com/posts/20
 
 add a contact form on your website: https://medium.com/@flobin/how-to-set-up-a-contact-form-on-a-static-website-62c2267bacfb   
   
-add social sharing using [AddThis](https://www.addthis.com/)https://gohugohq.com/partials/add-this-social-sharing/
+add social sharing using [AddThis](https://www.addthis.com/): https://gohugohq.com/partials/add-this-social-sharing/
    
    
    
