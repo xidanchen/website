@@ -108,38 +108,38 @@ disqusShortname = "yourdiscussshortname"
         name = "Travel"
         weight = 5
         url = "/travel/"
+        
+      [languages.ch]
+languagename = "中文"
+title = "Xidan Chen"
 
+[languages.ch.params]
+author = "Xidan Chen"
+description = "xidan chen 的个人网站"
+keywords = "博客, 数据科学, 幸福, 个人"
+info = "统计，数据科学"
 
-    [languages.ch]
-        languagename = "中文"
-        title = "Xidan Chen"
+[languages.ch.menu]
 
-        [languages.ch.params]
-            author = "Xidan Chen"
-            description = "xidan chen 的个人网站"
-            keywords = "博客, 数据科学, 幸福, 个人"
-            info = "统计，数据科学"
+[[languages.ch.menu.main]]
+name = "关于"
+weight = 1.0
+url = "/ch/about/"
 
-        [languages.ch.menu]
+[[languages.ch.menu.main]]
+name = "博客"
+weight = 2.0
+url = "/ch/post/"
 
-            [[languages.ch.menu.main]]
-            name = "关于"
-            weight = 1.0
-            url = "/ch/about/"
+[[languages.ch.menu.main]]
+name = "项目"
+weight = 3
+url = "/ch/projects/"
+[[languages.ch.menu.main]]
+name = "旅行"
+weight = 5
+url = "/ch/travel/"
 
-            [[languages.ch.menu.main]]
-            name = "博客"
-            weight = 2.0
-            url = "/ch/post/"
-
-            [[languages.ch.menu.main]]
-            name = "项目"
-            weight = 3
-            url = "/ch/projects/"
-            [[languages.ch.menu.main]]
-            name = "旅行"
-            weight = 5
-            url = "/ch/travel/"
 
 
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
