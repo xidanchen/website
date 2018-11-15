@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Xidan Chen">
+    <meta name="description" content="Xidan Chen&#39;s personal website">
+    <meta name="keywords" content="blog, data science, happiness, personal">
+
+    <base href="/">
+    <title>
+  A quick step-by-step guide to buide your own website using Blogdown, Github, Netlify · Xidan Chen
+</title>
+
+    <link rel="canonical" href="/2018/11/05/a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.cf79e6c3b1f6a5f3b633af689738b135c8ae60005166ed909a402efbb88959e2.css" integrity="sha256-z3nmw7H2pfO2M69olzixNciuYABRZu2QmkAu&#43;7iJWeI=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.50" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "/"
+    },
+    "articleSection" : "post",
+    "name" : "A quick step-by-step guide to buide your own website using Blogdown, Github, Netlify",
+    "headline" : "A quick step-by-step guide to buide your own website using Blogdown, Github, Netlify",
+    "description" : "If you are interested in creating your own website through RStudio, but don’t want to spend time reading the book blogdown: Creating Websites with R Markdown, and have no idea about version control, data managment, etc. Here is the step-by-step guide for you:
+STEP1:First, log into your github account, creat a new repository. If you don’t have github account, create one.
+click the + sign at the upper-right corner of the panel",
+    "inLanguage" : "en-US",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2018",
+    "datePublished": "2018-11-05 00:00:00 &#43;0000 UTC",
+    "dateModified" : "2018-11-05 00:00:00 &#43;0000 UTC",
+    "url" : "/2018/11/05/a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/",
+    "wordCount" : "699",
+    "keywords" : [ "R","blogdown","github","netlify","website","Blog" ]
+}
+</script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-128690538-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    <a class="navigation-title" href="/">
+      Xidan Chen
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/post/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/projects/">Project</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/categories/">Categories</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/tags/">Tags</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>A quick step-by-step guide to buide your own website using Blogdown, Github, Netlify</h1>
+    </header>
+
+    
+
+
+<p>If you are interested in creating your own website through RStudio, but don’t want to spend time reading the book <em>blogdown: Creating Websites with R Markdown</em>, and have no idea about version control, data managment, etc. Here is the step-by-step guide for you:</p>
+<div id="step1" class="section level1">
+<h1>STEP1:</h1>
+<p>First, log into your github account, creat a new repository. If you don’t have github account, create one.</p>
+<ul>
+<li>click the <strong>+</strong> sign at the upper-right corner of the panel<br />
+</li>
+<li>select <strong>new repository</strong>
+<ul>
+<li>give your new repository a name (e.g. Repository name: myrepo)<br />
+</li>
+<li>leave it to Public<br />
+</li>
+<li>Check <strong>Initialize this repository with a README</strong><br />
+</li>
+</ul></li>
+<li>click the green <strong>Create repository</strong> button<br />
+</li>
+<li>click the green <strong>clone or download</strong> button, click <strong>Use HTTPS</strong>, copy the URL to your clipboard</li>
+</ul>
+</div>
+<div id="step2" class="section level1">
+<h1>STEP2:</h1>
+<p>In RStudio, create a new project:</p>
+<ul>
+<li>File &gt; New Project &gt; Version Control &gt; Git.
+<ul>
+<li>in the <strong>Repository URL</strong>, paste the URL of your github repository (e.g. <a href="https://github.com/xidanchen/myrepo.git" class="uri">https://github.com/xidanchen/myrepo.git</a>)<br />
+</li>
+<li>give your project a name(e.g. Project directory name: myweb)<br />
+</li>
+<li>Browse the directory you would like to put your project<br />
+</li>
+<li>click the <strong>Create Project</strong> button</li>
+</ul></li>
+</ul>
+<p>Doing so, you now linked your github repository(myrepo) to your RStudio project(myweb).</p>
+</div>
+<div id="step3" class="section level1">
+<h1>STEP3:</h1>
+<p>This step is adopted from section 1.7 of xie yihui’s blogdown book.</p>
+<ul>
+<li>pick a hugo theme at <a href="https://themes.gohugo.io/" class="uri">https://themes.gohugo.io/</a>. I am going to pick the theme <em>Coder</em>.<br />
+</li>
+<li>click on Homepage to find the link to this repository(<a href="https://github.com/luizdepra/hugo-coder/" class="uri">https://github.com/luizdepra/hugo-coder/</a>)<br />
+</li>
+<li>in r studio, type the code blogdown::new_site(theme = ‘luizdepra/hugo-coder’) in the Console<br />
+</li>
+<li>customize the new site, we will come back to this later
+<ul>
+<li>edit the options in <strong>config.toml</strong>. If you do not have a domain, set “baseurl” to “/”. Change the “title” to your own name.
+<ul>
+<li>About how to change the options, consult the documention of the theme you selected. It’s often at the github repository of the selected theme or at the demo part of your selected theme at <a href="https://themes.gohugo.io/" class="uri">https://themes.gohugo.io/</a><br />
+</li>
+</ul></li>
+<li>click the <strong>Addins</strong> botton on the RStudio toolbar, select <strong>New Post</strong> to create a new post or page<br />
+</li>
+<li>click the <strong>Addins</strong> botton, select <strong>Serve Site</strong> to preview the site in RStudio Viewer. note do not click the <em>knit</em> button.</li>
+</ul></li>
+</ul>
+</div>
+<div id="step4" class="section level1">
+<h1>STEP4:</h1>
+<p>Commit and push the changes to github</p>
+<ul>
+<li><p>In RStudio, you will have a screen like this
+<img src="/post/2018-11-05-a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/RStudio.png" alt="netlifyCreateAnewSite" /></p></li>
+<li>at the upper-right corner, click on <strong>Git</strong><br />
+</li>
+<li>tick the Staged box<br />
+</li>
+<li><p>click <strong>Commit</strong>, a new window will open<br />
+<img src="/post/2018-11-05-a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/commit.png" alt="netlifyCreateAnewSite" /></p></li>
+<li>type something in <em>Commit message</em>, that’s often the changes you made and would like to record(e.g. add theme)<br />
+</li>
+<li>click the <strong>commit</strong> button<br />
+</li>
+<li>click the green <strong>Push</strong> arrow, changes you’ve made will then be pushed to github<br />
+</li>
+<li><p>if you’ve made lots of changes to the theme, instead of ticking the boxes of Staged, click <em>Tools &gt; Shell</em>, type <strong>git add . </strong> This will select all the changes you would like to add. Then commit and push.</p></li>
+</ul>
+</div>
+<div id="step5" class="section level1">
+<h1>STEP5:</h1>
+<p>Next is to publish your site with Netlify.</p>
+<ul>
+<li>log into <a href="https://www.netlify.com" class="uri">https://www.netlify.com</a> with your github account<br />
+</li>
+<li><p>click the green button <strong>New site from Git</strong>
+<img src="/post/2018-11-05-a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/netlify_createAnewSite.png" alt="netlifyCreateAnewSite" /></p></li>
+<li>Follow the step-by-step guide by Netlify, connect netlify to your github repository</li>
+<li>One problem with Netfly deployment is the default hugo version is too old, you would need to specify a hugo version greater than 0.20.<br />
+</li>
+<li><p>type <strong>HUGO_VERSION</strong> for the key, <strong>0.50</strong> for the Value<br />
+<img src="/post/2018-11-05-a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/deploy.png" alt="deploy" /></p></li>
+<li><p>click the <strong>Deploy site</strong>, now your site is live.
+<img src="/post/2018-11-05-a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/siteLive.png" alt="deploy" /></p></li>
+<li><p>sometimes although following the same procedure, netlify won’t deploy your website, Click on <strong>Deploys</strong>, <strong>Trigger deploy</strong> manually, try it several times. Check the <strong>Deploy settings</strong>, make sure <strong>Build command</strong> is set to <strong>hugo</strong>, <strong>Publish directory</strong> is set to <strong>public</strong>.<br />
+<img src="/post/2018-11-05-a-quick-step-by-step-guide-to-buide-your-own-website-using-blogdown-github-netlify/deployFail.png" alt="deploy" /></p></li>
+<li><p>netlify will assign a random Site name to you, go to <strong>Settings</strong>, change <strong>Site name</strong>, if you would like to have a unique domain name, check out <strong>Domain management</strong>. You can purchase one on netlify or get one somewhere else for free. Use your search engine.</p></li>
+</ul>
+</div>
+<div id="step6" class="section level1">
+<h1>STEP6:</h1>
+<p>Now you have your won website! go back to RStudio, make changes to your website. commit and push the changes to your github account. netlify will automatically publish your new site.</p>
+<p>Don’t know how to modify the theme? search xie yihui’s book <em>blogdown: Creating Websites with R Markdown</em>, documentation of your selected theme, online tutorials, etc.</p>
+</div>
+<div id="useful-links" class="section level1">
+<h1>USEFUL LINKS</h1>
+<div id="i-will-keep-updating-this" class="section level2">
+<h2>I will keep updating this</h2>
+<p>add google analytics to your site: <a href="http://cloudywithachanceofdevops.com/posts/2018/05/17/setting-up-google-analytics-on-hugo/#step-1-adding-your-site-to-google-analytics" class="uri">http://cloudywithachanceofdevops.com/posts/2018/05/17/setting-up-google-analytics-on-hugo/#step-1-adding-your-site-to-google-analytics</a></p>
+<p>add a contact form on your website: <a href="https://medium.com/@flobin/how-to-set-up-a-contact-form-on-a-static-website-62c2267bacfb" class="uri">https://medium.com/@flobin/how-to-set-up-a-contact-form-on-a-static-website-62c2267bacfb</a></p>
+<p>add social sharing using <a href="https://www.addthis.com/">AddThis</a>: <a href="https://gohugohq.com/partials/add-this-social-sharing/" class="uri">https://gohugohq.com/partials/add-this-social-sharing/</a></p>
+</div>
+</div>
+
+  </article>
+</section>
+
+  <div class="addthis_inline_share_toolbox"></div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5be55ba55820e618" async></script>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Interested in working together? Contact me!</p>
+    
+     © 2018
+    
+       · 
+      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+    
+       · 
+      [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-128690538-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  </body>
+
+</html>

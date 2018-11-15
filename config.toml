@@ -13,8 +13,8 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 enableRobotsTXT = true
 canonifyURLs = true
-
-
+enableEmoji = true
+hasCJKLanguage = true
 disqusShortname = "yourdiscussshortname"
 
 [params]
@@ -37,10 +37,12 @@ disqusShortname = "yourdiscussshortname"
     rtl = false
 
     # Custom CSS
-    custom_css = []
+    custom_css = ["css/github-gist.css"]
 
     addThis = "ra-5be55ba55820e618"
-
+    staticDir = "static"
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
 
 [[params.social]]
     name = "Github"
@@ -72,9 +74,14 @@ disqusShortname = "yourdiscussshortname"
     weight = 3
     url = "/projects/"
 [[menu.main]]
-    name = "Travel"
+    name = "Categories"
+    weight = 4
+    url = "/categories/"
+[[menu.main]]
+    name = "Tags"
     weight = 5
-    url = "/travel/"
+    url = "/tags/"
+
 
 [languages]
     [languages.en]
@@ -101,44 +108,18 @@ disqusShortname = "yourdiscussshortname"
         url = "/post/"
 
         [[languages.en.menu.main]]
-        name = "Projects"
+        name = "Project"
         weight = 3
         url = "/projects/"
         [[languages.en.menu.main]]
-        name = "Travel"
+        name = "Categories"
+        weight = 4
+        url = "/categories/"
+          [[languages.en.menu.main]]
+        name = "Tags"
         weight = 5
-        url = "/travel/"
-        
-      [languages.ch]
-languagename = "中文"
-title = "Xidan Chen"
-
-[languages.ch.params]
-author = "Xidan Chen"
-description = "xidan chen 的个人网站"
-keywords = "博客, 数据科学, 幸福, 个人"
-info = "统计，数据科学"
-
-[languages.ch.menu]
-
-[[languages.ch.menu.main]]
-name = "关于"
-weight = 1.0
-url = "/ch/about/"
-
-[[languages.ch.menu.main]]
-name = "博客"
-weight = 2.0
-url = "/ch/post/"
-
-[[languages.ch.menu.main]]
-name = "项目"
-weight = 3
-url = "/ch/projects/"
-[[languages.ch.menu.main]]
-name = "旅行"
-weight = 5
-url = "/ch/travel/"
+        url = "/tags/"
+    
 
 
 

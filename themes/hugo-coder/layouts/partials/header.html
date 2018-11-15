@@ -1,9 +1,17 @@
+    <link rel="stylesheet" href="{{"css/github-gist.css" | absURL}}" rel="stylesheet" id="theme-stylesheet">
+    <script src="{{ "js/highlight.pack.js" | absURL }}">
+    </script>
+    <script>hljs.initHighlightingOnLoad();
+    </script>
+
+
 <nav class="navigation">
   <section class="container">
     {{ partial "seo_schema" . }}
     <a class="navigation-title" href="{{ .Site.BaseURL | absLangURL }}">
       {{ .Site.Title }}
     </a>
+
     <input type="checkbox" id="menu-toggle" />
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
     <ul class="navigation-list">
@@ -34,3 +42,4 @@
     </ul>
   </section>
 </nav>
+

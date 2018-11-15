@@ -1,0 +1,18 @@
+{{ define "title" }}
+  {{ .Title }} · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+  {{ partial "page.html" . }}
+
+     <ul class="terms">
+      {{ range $key, $value := .Data.Terms }}
+     <li>
+      <a href='{{ (print "/" $.Data.Plural "/" $key) | relURL }}'>
+        {{ $key }}
+      </a>
+     ({{ len $value }})
+     </li>
+     {{ end }}
+    </ul>
+
+{{ end }}

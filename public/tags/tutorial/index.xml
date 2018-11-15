@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial on Xidan Chen</title>
+    <link>/tags/tutorial/</link>
+    <description>Recent content in Tutorial on Xidan Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 05 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A quick step-by-step guide to build your own website using Blogdown, Github, Netlify</title>
+      <link>/2018/11/05/build-website-r/</link>
+      <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/11/05/build-website-r/</guid>
+      <description>If you are interested in creating your own website through RStudio, but don’t want to spend time reading the book blogdown: Creating Websites with R Markdown, and have no idea about version control, data managment, etc. Here is the step-by-step guide for you:
+STEP1:First, log into your github account, creat a new repository. If you don’t have github account, create one.
+click the + sign at the upper-right corner of the panel</description>
+    </item>
+    
+  </channel>
+</rss>
